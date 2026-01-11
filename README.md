@@ -4,7 +4,7 @@ Jogo de futebol 3x3 premium para dispositivos móveis, desenvolvido com HTML5, C
 
 ## 🎮 Demo Online
 
-Jogue agora: https://seu-usuario.github.io/mini-soccer-3x3/
+Jogue agora: https://github.com/ZEUSKATANA2728828-Futebol
 
 ## ✨ Características
 
