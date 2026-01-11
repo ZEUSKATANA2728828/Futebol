@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ Mini Soccer 3x3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%232ecc71%22>⚽</text></svg>">
+</head>
+<body>
+    <!-- Telas do Jogo -->
+    <div class="screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-ball"></div>
+            <h1>MINI SOCCER 3x3</h1>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <div class="screen" id="menuScreen" style="display:none;">
+        <div class="menu">
+            <div class="logo">
+                <div class="logo-ball">⚽</div>
+                <h1>MINI SOCCER <span class="highlight">3x3</span></h1>
+                <p class="subtitle">MOBILE FOOTBALL</p>
+            </div>
+            
+            <div class="menu-buttons">
+                <button class="btn-play" id="playBtn">
+                    <i class="fas fa-play"></i> JOGAR
+                </button>
+                <button class="btn-settings" id="settingsBtn">
+                    <i class="fas fa-cog"></i> CONFIGURAÇÕES
+                </button>
+                <button class="btn-help" id="helpBtn">
+                    <i class="fas fa-question-circle"></i> AJUDA
+                </button>
+            </div>
+            
+            <div class="stats">
+                <div class="stat"><i class="fas fa-trophy"></i> <span id="wins">0</span> V</div>
+                <div class="stat"><i class="fas fa-futbol"></i> <span id="games">0</span> J</div>
+                <div class="stat"><i class="fas fa-star"></i> <span id="level">1</span> LVL</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen" id="gameScreen" style="display:none;">
+        <div class="game-header">
+            <div class="score">
+                <div class="team player">VOCÊ <span id="playerScore">0</span></div>
+                <div class="timer" id="timer">02:00</div>
+                <div class="team cpu"><span id="cpuScore">0</span> CPU</div>
+            </div>
+            <button class="btn-pause" id="pauseBtn"><i class="fas fa-pause"></i></button>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+            
+            <div class="controls">
+                <div class="joystick" id="joystick">
+                    <div class="joystick-base"></div>
+                    <div class="joystick-handle"></div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-action pass" id="passBtn"><i class="fas fa-share"></i></button>
+                    <button class="btn-action shoot" id="shootBtn"><i class="fas fa-bullseye"></i></button>
+                    <button class="btn-action tackle" id="tackleBtn"><i class="fas fa-running"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen" id="pauseScreen" style="display:none;">
+        <div class="pause-menu">
+            <h2><i class="fas fa-pause"></i> PAUSADO</h2>
+            <div class="pause-score">
+                <span id="pausePlayerScore">0</span> - <span id="pauseCpuScore">0</span>
+            </div>
+            <div class="pause-time">Tempo: <span id="pauseTimer">02:00</span></div>
+            
+            <button class="btn-resume" id="resumeBtn">CONTINUAR</button>
+            <button class="btn-restart" id="restartBtn">REINICIAR</button>
+            <button class="btn-menu" id="pauseMenuBtn">MENU</button>
+        </div>
+    </div>
+
+    <div class="screen" id="endScreen" style="display:none;">
+        <div class="end-menu">
+            <div class="trophy" id="trophyIcon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2 id="endTitle">FIM DE JOGO!</h2>
+            <div class="final-score">
+                <span id="finalPlayerScore">0</span> - <span id="finalCpuScore">0</span>
+            </div>
+            <p id="endMessage">Boa partida!</p>
+            
+            <button class="btn-play-again" id="playAgainBtn">JOGAR NOVAMENTE</button>
+            <button class="btn-menu-end" id="menuEndBtn">MENU PRINCIPAL</button>
+        </div>
+    </div>
+
+    <!-- Sons do jogo -->
+    <audio id="kickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-ball-kick-341.mp3" preload="auto"></audio>
+    <audio id="goalSound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
+    <audio id="whistleSound" src="https://assets.mixkit.co/sfx/preview/mixkit-referee-whistle-481.mp3" preload="auto"></audio>
+
+    <script src="game.js"></script>
+</body>
+              </html>
